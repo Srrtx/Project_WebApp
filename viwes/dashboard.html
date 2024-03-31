@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+    <script src="/public/js/bootstrap.bundle.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="/public/css/dashboard.css"> -->
+
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .text {
+            position: absolute;
+            top: 125px;
+            left: 100px;
+            font-weight: bold;
+        }
+
+        .img {
+            background-image: url('/public/img/cat.jpg');
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Header -->
+    <!-- Insert a picture in css file -->
+    <div class="row px-5 justify-content-center mt-5 mb-4">
+        <div class="img col p-4 ms-3 shadow rounded-4 text-start m-3 bg-warning">
+            <h1 class="text-dark mt-3"><strong>XX/XX/XXXX</strong></h1>
+        </div>
+    </div>
+
+    <!-- Body -->
+    <div class="row justify-content-center">
+        <!-- All room -->
+        <div class="col-sm-2 p-4 ms-3 shadow rounded-3 text-end m-3 bg-warning">
+            <div class="text-light">
+                <h4>ALL ROOM SLOT</h4>
+                <h6 class="pt-5">16 Room</h6>
+            </div>
+        </div>
+
+        <!-- Free room -->
+        <div class="col-sm-2 p-4 ms-3 shadow rounded-3 text-end m-3 bg-primary">
+            <div class="text-light">
+                <h4>FREE ROOM SLOT</h4>
+                <h6 class="pt-5">16 Room</h6>
+            </div>
+        </div>
+
+        <!-- Pending room -->
+        <div class="col-sm-2 p-4 ms-3 shadow rounded-3 text-end m-3 bg-success">
+            <div class="text-light">
+                <h4>PENDING ROOM SLOT</h4>
+                <h6 class="pt-3">16 Room</h6>
+            </div>
+        </div>
+
+        <!-- Served room -->
+        <div class="col-sm-2 p-4 ms-3 shadow rounded-3 text-end m-3 bg-info">
+            <div class="text-light">
+                <h4>SERVED ROOM SLOT</h4>
+                <h6 class="pt-3">16 Room</h6>
+            </div>
+        </div>
+
+        <!-- Disable room -->
+        <div class="col-sm-2 p-4 ms-3 shadow rounded-3 text-end m-3 bg-danger">
+            <div class="text-light">
+                <h4>DISABLED ROOM SLOT</h4>
+                <h6 class="pt-3">16 Room</h6>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

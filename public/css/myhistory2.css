@@ -1,0 +1,25 @@
+.table1{
+    border-collapse: separate;
+    border-spacing: 0 10px; 
+    width: 100%;
+}
+thead {
+    border: none;
+    border-top: 0;
+}
+
+tbody {
+    border: none;
+}
+
+tbody td,th {
+    padding: 10px;
+}
+
+
+tbody tr {
+
+    box-shadow: 0px 3px 8px 0px #00000040;
+    border-radius: 10px;
+}
+
