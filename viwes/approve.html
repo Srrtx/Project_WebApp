@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,60 @@
     <link rel="stylesheet" href="/public/css/bootstrap.min.css">
     <script src="/public/js/bootstrap.bundle.min.js"></script>
 </head>
+
 <body>
-    <div class="container"></div>
-</body> 
+    <div class="ps-2 navbar">
+        <div>
+            <h4 href="#" class="text-dark navbar">HOMEPAGE</h4>
+        </div>
+        <div class="">
+            <a href="#" class="text-dark px-4" style="text-decoration: none">History</a>
+            <a href="#" class="text-dark px-4" style="text-decoration: none">Request</a>
+            <!-- <img src="/public/img/otaku.png" alt="otaku" width="60px" height="60px" class="rounded-circle me-3 shadow"> -->
+        </div>
+    </div>
+    <div class="border-bottom"></div>
+
+    <h4 class="text-center mt-4 fw-bolder">Approved Rooms</h4>
+    <div class="container">
+        <!-- Table -->
+        <table class="container-table">
+            <thead>
+                <tr id="header">
+                    <th>UserID</th>
+                    <th>Username</th>
+                    <th>Room</th>
+                    <th>Booking Time</th>
+                    <th>Booking Data</th>
+                    <th>Note</th>
+                    <th>Approved</th>
+                    <th>Disapproved</th>
+                </tr>
+            </thead>
+            <!-- Sample -->
+            <tbody>
+                <tr id="tr-hover">
+                    <th>UserID</th>
+                    <th>Username</th>
+                    <th>Room</th>
+                    <th>Booking Time</th>
+                    <th>Booking Data</th>
+                    <th>Note</th>
+                    <th>Approved</th>
+                    <th>Disapproved</th>
+                </tr>
+                <tr id="tr-hover">
+                    <th>UserID</th>
+                    <th>Username</th>
+                    <th>Room</th>
+                    <th>Booking Time</th>
+                    <th>Booking Data</th>
+                    <th>Note</th>
+                    <th>Approved</th>
+                    <th>Disapproved</th>
+                </tr>
+        </table>
+    </div>
+</body>
+
 </html>
