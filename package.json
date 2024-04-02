@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "bootstrap": "^5.3.3",
+    "express": "^4.19.2",
+    "node": "^18.20.0",
     "sweetalert2": "^11.10.7"
   },
   "name": "project_webapp",
