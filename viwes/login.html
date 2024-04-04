@@ -14,7 +14,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="container row  m-2 ">
-                        <h1 class="text-center pt-5">Login</h1>
+                        <h1 class="text-center pt-5 mt-4">Login</h1>
                         <div class="py-1">Username</div>
                         <input id="username" type="text" class="form-control shadow " placeholder="Username...">
                         <div class="py-1">Password</div>
@@ -25,7 +25,7 @@
                         </div>
                         <button id="btnlogin" class="btn btn-dark  shadow">Login</button>
                         <div class="text-end pt-3">
-                            You dont have an account?      <a href="####" class="text-dark">Create new account</a> 
+                            You dont have an account?      <a href="Registor.html" class="text-dark">Create new account</a> 
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,11 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        document.querySelector('#btnlogin').addEventListener('click',()=>{
+            window.location.assign('/Project/HOMEPAGEUSER.html')
+        })
+    </script>
    
 </body>
 </html>

@@ -1,5 +1,4 @@
-registor.html
-Registor.html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +10,13 @@ Registor.html
     <title>Registor</title>
 
 </head>
-<body>
+<body class="p-5">
     <div class="container d-flex justify-content-center mt-5 ">
         <div class="card form border container px-3 col-lg-8 shadow rounded-3">
             <div class="row">
                 <div class="col-lg-6 ">
                     <div class="container">
                         <h1 class="text-center pt-3">Sign Up</h1>
-
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="py-1">Firstname</div>
@@ -35,10 +33,12 @@ Registor.html
                         <input id="password" type="password" class="form-control shadow" placeholder="Password...">
                         <div class="py-1">Comfirm Password</div>
                         <input id="comfirm password" type="password" class="form-control shadow" placeholder="Comfirm Password...">
-                        <button id="btnlogin" class="btn btn-dark shadow mt-3 form-control">Sign Up</button>
-                        <div class="text-end pt-4">
-                            Already have an account?     <a href="####" class="text-dark">Sign up</a> 
+                        <div class="row mx-1 ">
+                            <button id="btnsignin" class="btn btn-dark shadow mt-3 text-center">Sign Up</button>
                         </div>
+                            <div class="text-end pt-3 ">
+                                Already have an account?     <a href="login.html" class="text-dark">Login</a> 
+                            </div>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center justify-content-center ps-5 pe-0 m-0">
@@ -47,7 +47,11 @@ Registor.html
             </div>
         </div>
     </div>
-    
+    <script>
+        document.querySelector('#btnsignin').addEventListener('click',()=>{
+            window.location.assign('/Project/HOMEPAGEUSER.html')
+        })
+    </script>
    
 </body>
 </html>
