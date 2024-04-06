@@ -1,15 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/public/js/register.js"></script>
     <title>Registor</title>
 
 </head>
+
 <body class="p-5">
     <div class="container d-flex justify-content-center mt-5 ">
         <div class="card form border container px-3 col-lg-8 shadow rounded-3">
@@ -20,7 +22,8 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="py-1">Firstname</div>
-                                <input id="firstname" type="text" class="form-control shadow" placeholder="Firstname...">
+                                <input id="firstname" type="text" class="form-control shadow"
+                                    placeholder="Firstname...">
                             </div>
                             <div class="col-lg-6">
                                 <div class="py-1 ">Lastname</div>
@@ -32,13 +35,14 @@
                         <div class="py-1">Password</div>
                         <input id="password" type="password" class="form-control shadow" placeholder="Password...">
                         <div class="py-1">Comfirm Password</div>
-                        <input id="comfirm password" type="password" class="form-control shadow" placeholder="Comfirm Password...">
+                        <input id="comfirm password" type="password" class="form-control shadow"
+                            placeholder="Comfirm Password...">
                         <div class="row mx-1 ">
                             <button id="btnsignin" class="btn btn-dark shadow mt-3 text-center">Sign Up</button>
                         </div>
-                            <div class="text-end pt-3 ">
-                                Already have an account?     <a href="login.html" class="text-dark">Login</a> 
-                            </div>
+                        <div class="text-end pt-3 ">
+                            Already have an account? <a href="login.html" class="text-dark">Login</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center justify-content-center ps-5 pe-0 m-0">
@@ -48,10 +52,45 @@
         </div>
     </div>
     <script>
-        document.querySelector('#btnsignin').addEventListener('click',()=>{
-            window.location.assign('/Project/HOMEPAGEUSER.html')
-        })
+        //.querySelector('#btnsignin').addEventListener('click', () => {
+            const formRegis = document.querySelector('#btnsignin');
+            formRegis.onsubmit = async function (event) {
+                // prevent the default form refresh
+                event.preventDefault();
+                const username = formRegis['username'].value;
+                const password = formRegis['password'].value;
+                const confirm_password = formRegis['confirm password'].value;
+                const firstname = formRegis['firstname'].value;
+                const lastname = formRegis['lasttname'].value;
+                console.log(username, password);
+
+                try {
+                    const options = {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ "username": username, "password": password })
+                    };
+                    // connect to server to get data
+                    const response = await fetch(`/register`, options);
+                    if (response.ok) {
+                        const message = await response.text();
+                        alert(message);
+                    } else if (response.status === 401) {
+                        const message = await response.text();
+                        // alert(message);
+                        throw Error(message);
+                    } else {
+                        // alert('Server error');
+                        throw Error('Server error');
+                    }
+                } catch (error) {
+                    alert(error.message);
+                }
+            }
+            //  window.location.assign('/Project/HOMEPAGEUSER.html')
+      //  })
     </script>
-   
+
 </body>
+
 </html>
