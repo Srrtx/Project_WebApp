@@ -6,9 +6,8 @@ const app = express();
 
 //config
 //set "public" folder to static folder
-//app.use("/public", express.static(path.join(__dirname, 'Project_WebApp/public')));
-//app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'Project_WebApp', 'views')));
+app.use(express.static(path.join(__dirname,'Project_WebApp/viwes')));
+
 // allow json exchange
 app.use(express.json());
 // allow urlencoded exchange
@@ -85,8 +84,7 @@ app.get('/', function(_req, res){
 // Register Page--------------------------------------------------------------------
 //GET
 app.get('/signup', (req,res) => {
-    //res.sendFile(path.join(__dirname, 'Project_WebApp/viwes/register.html'));
-    res.sendFile(path.join(__dirname, 'Project_WebApp', 'views', 'register.html'));
+    res.sendFile(path.join(__dirname, 'Project_WebApp/views/register.html'));
 });
 // POST
 app.post('/register', (req, res) => {
