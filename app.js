@@ -20,11 +20,17 @@ app.get('/', function(_req, res){
     res.sendFile(path.join(__dirname, 'Project_WebApp/viwes/index.html'));
 });
 
+app.get('/signup', (req, res) => {
+    const filePath = path.join(__dirname,'Project_WebApp/viwes/register.html');
+    res.sendFile(path.join(__dirname, ""));
+
+});
+
 // Register Page--------------------------------------------------------------------
 //GET
-app.get('/signup', (req,res) => {
-    res.sendFile(path.join(__dirname, 'views/register.html'));
-});
+// app.get('/signup', (req,res) => {
+//     res.sendFile(path.join(__dirname, 'views/register.html'));
+// });
 // POST
 app.post('/register', (req, res) => {
     const { username, password, confirmPassword, firstname, lastname } = req.body;
