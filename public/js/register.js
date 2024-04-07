@@ -3,7 +3,7 @@ document.querySelector('#registerForm').addEventListener('submit', async functio
     // Get input values
     const username = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
-    const confirmPassword = document.querySelector('#confirmPassword').value;
+    const confirmPassword = document.querySelector('#comfirm_password').value;
     const firstname = document.querySelector('#firstname').value;
     const lastname = document.querySelector('#lastname').value;
 

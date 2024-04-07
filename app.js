@@ -6,7 +6,9 @@ const app = express();
 
 //config
 //set "public" folder to static folder
-app.use("/public", express.static(path.join(__dirname, 'Project_WebApp/public')));
+//app.use("/public", express.static(path.join(__dirname, 'Project_WebApp/public')));
+//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Project_WebApp', 'views')));
 // allow json exchange
 app.use(express.json());
 // allow urlencoded exchange
@@ -70,30 +72,33 @@ app.post('/login',function(req,res){
 //login page
 app.get('/login', function(_req, res){
     //res.status(200).send('hello');
-    res.sendFile(path.join(__dirname, 'WEB-2/viwes/login.html'));
+    res.sendFile(path.join(__dirname, 'Project_WebApp/viwes/login.html'));
 });
 
 // root service (last service)
 // localhost:3000
 app.get('/', function(_req, res){
     //res.status(200).send('hello');
-    res.sendFile(path.join(__dirname, 'WEB-2/viwes/index.html'));
+    res.sendFile(path.join(__dirname, 'Project_WebApp/viwes/index.html'));
 });
 
-// Register --------------------------------------------------------------------
-app.use(express.json());
+// Register Page--------------------------------------------------------------------
+//GET
+app.get('/signup', (req,res) => {
+    //res.sendFile(path.join(__dirname, 'Project_WebApp/viwes/register.html'));
+    res.sendFile(path.join(__dirname, 'Project_WebApp', 'views', 'register.html'));
+});
+// POST
 app.post('/register', (req, res) => {
-    const { username, password, firstname, lastname } = req.body;
-
-    // Perform registration logic here (e.g., store user in database)
+    const { username, password, confirmPassword, firstname, lastname } = req.body;
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        return res.status(400).send('Passwords do not match');
+    }
+    // Registration store user in database
     // Respond with success message
     res.status(200).send('Registration successful');
 });
-
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-});
-
 
 
 // start sever
