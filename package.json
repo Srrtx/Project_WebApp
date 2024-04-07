@@ -5,13 +5,16 @@
     "express": "^4.19.2",
     "node": "^18.20.0",
     "package": "^1.0.1",
-    "sweetalert2": "^11.10.7"
+    "sweetalert2": "^11.10.7",
+    "mysql2": "^3.9.3",
+    "nodemon": "^3.1.0"
   },
   "name": "project_webapp",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon app",
+    "server": "nade app"
   },
   "author": "",
   "license": "ISC",
